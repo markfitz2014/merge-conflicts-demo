@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce11it5wdxtvo"]
+
+[ext_resource type="PackedScene" uid="uid://c6l6mao7h6qu5" path="res://Scenes/Levels/level_00.tscn" id="1_lixft"]
+[ext_resource type="PackedScene" uid="uid://qsdlmeh44ilv" path="res://Scenes/Player/player.tscn" id="2_qw60k"]
+
+[node name="Main" type="Node3D"]
+
+[node name="LevelContainer" type="Node3D" parent="."]
+
+[node name="Level_00" parent="LevelContainer" instance=ExtResource("1_lixft")]
+
+[node name="PlayerContainer" type="Node3D" parent="."]
+
+[node name="Player" parent="PlayerContainer" instance=ExtResource("2_qw60k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 39)
+
+[node name="EnemyContainer" type="Node3D" parent="."]

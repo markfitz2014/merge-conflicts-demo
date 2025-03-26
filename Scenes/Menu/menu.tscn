@@ -1,0 +1,199 @@
+[gd_scene load_steps=12 format=3 uid="uid://y8h10m0h602e"]
+
+[ext_resource type="Script" uid="uid://by88bhwoacoim" path="res://Scenes/Menu/menu.gd" id="1_cqskg"]
+
+[sub_resource type="Gradient" id="Gradient_k4toc"]
+offsets = PackedFloat32Array(0.239766, 0.77193)
+colors = PackedColorArray(0.222601, 0.328836, 0.442772, 1, 0.621897, 0.884632, 0.995796, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cqskg"]
+gradient = SubResource("Gradient_k4toc")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3ymnh"]
+font_size = 78
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0.152591, 0.152591, 0.152591, 0.784314)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3qr6s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j7r1e"]
+font_size = 44
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_8inha"]
+font_names = PackedStringArray("Franklin Gothic")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqskg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ymnh"]
+bg_color = Color(0, 0, 0, 0.627451)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.991292, 0.754391, 0.360416, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_cqskg"]
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0.142733, 0.142733, 0.142733, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7r1e"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqskg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_cqskg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="GameTitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "GAME TITLE"
+label_settings = SubResource("LabelSettings_3ymnh")
+horizontal_alignment = 1
+
+[node name="HSepGamaeTitle" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_3qr6s")
+
+[node name="MenuLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU"
+label_settings = SubResource("LabelSettings_j7r1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 12
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_8inha")
+theme_override_font_sizes/font_size = 38
+text = " PLAY "
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_8inha")
+theme_override_font_sizes/font_size = 38
+text = " OPTIONS "
+
+[node name="CreditsButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_8inha")
+theme_override_font_sizes/font_size = 38
+text = " CREDITS "
+
+[node name="ExitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_8inha")
+theme_override_font_sizes/font_size = 38
+text = " EXIT "
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_cqskg")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -40.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer2"]
+custom_minimum_size = Vector2(400, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ymnh")
+
+[node name="OutputLabel" type="Label" parent="VBoxContainer2/PanelContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_cqskg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_j7r1e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
